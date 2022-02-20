@@ -1,0 +1,19 @@
+button {
+    cursor: pointer;
+    border-radius: 5px 5px 5px 5px;
+    width: 170px;
+    height: 47px;
+    background-color: #27b069;
+    font-size: 13px;
+    border: none;
+    color: #ffffff;
+    margin-top: 20px;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
