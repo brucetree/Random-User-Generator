@@ -64,6 +64,27 @@ function App() {
         )
     };
 
+    const GetTitleSmall = ({info}) => {
+        const title = [
+            `my name is ${info.name.first} ${info.name.last}`,
+            `my email is ${info.email}`,
+        ]
+        return (<>
+                <div className='SmalltitleGroup'>
+                    <h3 className='SmallimgFont'>Hi,</h3>
+                    <h3 className='SmallimgFont'>{title[link]}</h3>
+                    {loadPic ?
+                        <div className='LoadingPic'>
+                            <div className="fa-1x">
+                                <i className="fa-solid fa-camera-rotate fa-flip"></i>
+                            </div>
+                        </div>
+                        :<></>}
+                </div>
+            </>
+        )
+    };
+
     const setLinkFunction = (index) => {
         setLink(index);
     };
@@ -101,6 +122,7 @@ function App() {
                                     )
                                 })}
                             </div>
+                            <GetTitleSmall info={item}/>
                         </Fragment>
                     )
                 })}

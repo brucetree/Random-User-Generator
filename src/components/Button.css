@@ -12,8 +12,10 @@ button {
     position: absolute;
     bottom: 0;
     margin-bottom: 20px;
+    transition:  all 500ms;
 }
 
 button:hover {
     opacity: 0.8;
 }
+

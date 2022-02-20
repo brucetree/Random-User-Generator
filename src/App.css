@@ -19,6 +19,7 @@ html,body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition:  all 500ms;
 }
 
 .perosonalImg{
@@ -83,6 +84,7 @@ html,body{
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition:  all 500ms;
 }
 .icons .fas{
   margin-top: 20px;
@@ -108,4 +110,34 @@ html,body{
   position: absolute;
   right: 10px;
   bottom: 10px;
+}
+.SmalltitleGroup{
+  display: none;
+}
+
+
+@media screen and (max-width: 900px) {
+  .mainBody{
+    display: none;
+    transition:  all 500ms;
+  }
+
+  .sideBar{
+    width: 100vw;
+    transition:  all 500ms;
+  }
+  .titleGroup{
+    display: none;
+  }
+  .SmalltitleGroup{
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-top: auto;
+  }
+
+  .icons{
+    margin-top: -20px;
+    transition:  all 500ms;
+  }
 }
