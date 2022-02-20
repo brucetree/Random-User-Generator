@@ -3,7 +3,8 @@ import {Fragment, useState} from "react";
 import './App.css';
 import Button from "./components/Button";
 import RadioButtonsGroup from "./components/RadioButton";
-
+import Typography from '@mui/material/Typography';
+import Box from '@mui/material/Box';
 
 function App() {
     const [isLoaded, setIsLoaded] = useState(false);
@@ -57,8 +58,14 @@ function App() {
             `my email is ${info.email}`,
         ]
         return (<><div className='titleGroup'>
-                <h1 className='imgFont'>Hi,</h1>
-                <h1 className='imgFont'>{title[link]}</h1>
+                <Typography component="div">
+                    <Box sx={{ fontFamily: 'Monospace', fontSize: 'h3.fontSize', m: 3 }}>
+                        Hi,
+                    </Box>
+                    <Box sx={{ fontFamily: 'Monospace', fontSize: 'h3.fontSize', m: 3 }}>
+                        {title[link]}
+                    </Box>
+                </Typography>
             </div>
             </>
         )
@@ -66,13 +73,16 @@ function App() {
 
     const GetTitleSmall = ({info}) => {
         const title = [
-            `my name is ${info.name.first} ${info.name.last}`,
-            `my email is ${info.email}`,
+            `${info.name.first} ${info.name.last}`,
+            `${info.email}`,
         ]
         return (<>
                 <div className='SmalltitleGroup'>
-                    <h3 className='SmallimgFont'>Hi,</h3>
-                    <h3 className='SmallimgFont'>{title[link]}</h3>
+                    <Typography component="div">
+                        <Box sx={{ fontFamily: 'Monospace', fontSize: 'h5.fontSize', m: 3 }}>
+                            {title[link]}
+                        </Box>
+                    </Typography>
                     {loadPic ?
                         <div className='LoadingPic'>
                             <div className="fa-1x">
@@ -113,7 +123,7 @@ function App() {
                     return (
                         <Fragment key={item.id.name + index}>
                             <img className="perosonalImg" src={item.picture.large} alt={'img broken'}/>
-                            <h3>{item.name.first} {item.name.last}</h3>
+                            <h3 className='FullName'>{item.name.first} {item.name.last}</h3>
                             <div className='icons'>
                                 {icons.map((icon, index) => {
                                     return (
