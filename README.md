@@ -1,7 +1,7 @@
 # Getting Started with Random-User-Generator
 
 ## Launch the App
-1. Make sure you have installed yarn
+1. Run `yarn install` to install all the dependencies
 2. Then run`yarn start`
 
 ## Feature of App
