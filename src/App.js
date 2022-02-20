@@ -10,6 +10,7 @@ function App() {
     const [items, setItems] = useState([]);
     const [link, setLink] = useState(0);
     const [gender, setGender] = useState('all');
+    const [loadPic, setLoadPic]= useState(false);
     const icons = [
         'fas fa-user fa-2x',
         'fas fa-envelope fa-2x',
@@ -38,8 +39,10 @@ function App() {
             const newGender = data.results.map(item => item.gender)[0];
             if (gender !== 'all' && newGender !== gender
             ) {
-                fetchUserFunction()
+                setLoadPic(true);
+                fetchUserFunction();
             } else {
+                setLoadPic(false);
                 setIsLoaded(true);
                 setItems(data.results);
             }
@@ -53,9 +56,10 @@ function App() {
             `my name is ${info.name.first} ${info.name.last}`,
             `my email is ${info.email}`,
         ]
-        return (<>
+        return (<><div className='titleGroup'>
                 <h1 className='imgFont'>Hi,</h1>
                 <h1 className='imgFont'>{title[link]}</h1>
+            </div>
             </>
         )
     };
@@ -112,6 +116,13 @@ function App() {
                             <img className="mainImg" src={item.picture.large} alt={'img broken'}/>
                             <div className='Background'></div>
                             <GetTitle info={item}/>
+                            {loadPic ?
+                                <div className='LoadingPic'>
+                                <div className="fa-3x">
+                                    <i className="fa-solid fa-camera-rotate fa-flip"></i>
+                            </div>
+                                </div>
+                                :<></>}
                         </Fragment>
                     )
                 })}

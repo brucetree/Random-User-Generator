@@ -55,6 +55,16 @@ html,body{
   width: 100%;
   position: absolute;
 }
+
+.titleGroup{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+}
+
+
 .imgFont{
   position: relative;
   margin-left: 40px;
@@ -85,9 +95,17 @@ html,body{
 }
 
 .lableGroup{
-  position: absolute;
-  bottom: 0;
   margin-bottom: 70px;
+  margin-top: auto;
   margin-left: 35px;
 }
 
+.fa-3x{
+  position: relative;
+}
+
+.LoadingPic{
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
